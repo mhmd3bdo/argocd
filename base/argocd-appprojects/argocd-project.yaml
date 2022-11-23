@@ -13,5 +13,15 @@ spec:
   - '*'
   # Only permit applications to deploy to the guestbook namespace in the same cluster
   destinations:
-  - server: https://kubernetes.default.svc
+  - namespace: '*'
+    server: '*'
+
+  # Deny all cluster-scoped resources from being created, except for Namespace
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: Namespace
+
+  # Enables namespace orphaned resource monitoring.
+  orphanedResources:
+    warn: false
   

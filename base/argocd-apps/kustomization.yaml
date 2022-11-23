@@ -5,4 +5,4 @@ kind: Kustomization
 
 resources:
   - argocd-app.yaml
-  # - guestbook-app.yaml
+  - guestbook-app.yaml
